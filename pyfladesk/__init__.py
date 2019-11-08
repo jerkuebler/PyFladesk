@@ -1,5 +1,5 @@
 import sys
-from PyQt5 import QtCore, QtWidgets, QtGui, QtWebEngineWidgets
+from PySide2 import QtCore, QtWidgets, QtGui, QtWebEngineWidgets
 import socket
 
 
@@ -26,7 +26,7 @@ class WebPage(QtWebEngineWidgets.QWebEnginePage):
 
     def acceptNavigationRequest(self, url, kind, is_main_frame):
         """Open external links in browser and internal links in the webview"""
-        ready_url = url.toEncoded().data().decode()
+        ready_url = url.toEncoded().data()
         is_clicked = kind == self.NavigationTypeLinkClicked
         if is_clicked and self.root_url not in ready_url:
             QtGui.QDesktopServices.openUrl(url)

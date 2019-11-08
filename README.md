@@ -1,3 +1,5 @@
+## Changed PyQt requirement to PySide2 for licensing reasons; virtually no other difference.
+
 ## PyFladesk
 
 Create desktop application by using Flask and QtWebEngine.
